@@ -188,7 +188,7 @@ func (t *tree) findWithinSize(ch chan<- int, max int) int {
 func (t *tree) Print(indent int) string {
 	ret := ""
 	if t.dir == "/" {
-		ret += fmt.Sprintf("- / (dir)\n")
+		ret += "- / (dir)\n"
 	}
 	print := func(in string) string {
 		r := ""
@@ -204,7 +204,7 @@ func (t *tree) Print(indent int) string {
 	}
 
 	for _, leaf := range t.leaves {
-		ret += print(fmt.Sprintf("- %s (file, size=%d\n", leaf.name, leaf.size))
+		ret += print(fmt.Sprintf("- %s (file, size=%d)\n", leaf.name, leaf.size))
 	}
 	return ret
 }
